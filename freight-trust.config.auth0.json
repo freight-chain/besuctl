@@ -1,0 +1,8 @@
+{
+  "AUTH0_DOMAIN": "freight-trust.auth0.com",
+  "AUTH0_CLIENT_ID": "TUsGjJWAY8hCbqPlaFsJ7KpvMaWdIOdQ",
+  "AUTH0_CLIENT_SECRET": "YOUR_CLIENT_SECRET",
+  "AUTH0_KEYWORD_REPLACE_MAPPINGS": { "AUTH0_TENANT_NAME": "freight-trust" },
+  "AUTH0_ALLOW_DELETE": false,
+  "AUTH0_EXCLUDED_RULES": [ "rule-1-name" ]
+}

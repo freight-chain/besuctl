@@ -1,20 +1,25 @@
 besuctl
 =======
 
-Hyperledger Besu Command Line Utility
+Hyperledger Besu Command Line Utility 
 
-[![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
 [![Version](https://img.shields.io/npm/v/besuctl.svg)](https://npmjs.org/package/besuctl)
-[![CircleCI](https://circleci.com/gh/freight-trust/besuctl/tree/master.svg?style=shield)](https://circleci.com/gh/freight-trust/besuctl/tree/master)
-[![Downloads/week](https://img.shields.io/npm/dw/besuctl.svg)](https://npmjs.org/package/besuctl)
 [![License](https://img.shields.io/npm/l/besuctl.svg)](https://github.com/freight-trust/besuctl/blob/master/package.json)
+[freight-chain](https://github.com/freight-chain)
+[freight-trust](https://freighttrust.com)
 
-<!-- toc -->
-* [Usage](#usage)
-* [Commands](#commands)
-<!-- tocstop -->
-# Usage
-<!-- usage -->
+# Overview
+
+This command line utility is intended to enable users to administer, access, and deploy nodes or sidechains to a hyperledger besu network, while using a centeralized LDAP/OAuth2 provider. This example uses `auth0`, but can be generalized for other 3rd Party Providers. Connecting via `LDAP` is supported, see [roadmap](#roadmap)
+
+- Considerations 
+* [Web3 typescript](https://github.com/xf00f/web3x)
+* [Roadmap for features](https://documenter.getpostman.com/view/9323065/SztJziuL?version=latest)
+* [Usage](##usage)
+* [Commands](##commands)
+
+## Usage
+
 ```sh-session
 $ npm install -g besuctl
 $ besuctl COMMAND
@@ -26,19 +31,22 @@ USAGE
   $ besuctl COMMAND
 ...
 ```
-<!-- usagestop -->
+
 # Commands
-<!-- commands -->
-* [`besuctl hello [FILE]`](#besuctl-hello-file)
+
+## besuctl overview
 * [`besuctl help [COMMAND]`](#besuctl-help-command)
 
-## `besuctl hello [FILE]`
+## besuctl example command
+* [`besuctl eth chainid`](#besuctl-eth-chainid)
 
-describe the command here
+### `besuctl eth chainid`
+
+This returns the `chainid` from the RPC endpoint you are connected to or localhost, as defined in the `.env` file
 
 ```
 USAGE
-  $ besuctl hello [FILE]
+  $ besuctl eth chainid
 
 OPTIONS
   -f, --force
@@ -46,11 +54,22 @@ OPTIONS
   -n, --name=name  name to print
 
 EXAMPLE
-  $ besuctl hello
-  hello world from ./src/hello.ts!
+  $ besuctl eth chainid
+  
+  chainid: 211, 0xd3
 ```
 
-_See code: [src/commands/hello.ts](https://github.com/freight-trust/besuctl/blob/v0.0.2/src/commands/hello.ts)_
+
+```json
+{
+    "jsonrpc": "2.0",
+    "method": "eth_chainId",
+    "params": [],
+    "id": 211
+}
+
+```
+
 
 ## `besuctl help [COMMAND]`
 
@@ -62,10 +81,9 @@ USAGE
 
 ARGUMENTS
   COMMAND  command to show help for
-
+  LIST     list all the available commands
 OPTIONS
   --all  see all commands in CLI
 ```
 
-_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v3.1.0/src/commands/help.ts)_
 <!-- commandsstop -->
