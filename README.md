@@ -3,17 +3,15 @@ besuctl
 
 Hyperledger Besu Command Line Utility
 
-[![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
 [![Version](https://img.shields.io/npm/v/besuctl.svg)](https://npmjs.org/package/besuctl)
-[![CircleCI](https://circleci.com/gh/freight-trust/besuctl/tree/master.svg?style=shield)](https://circleci.com/gh/freight-trust/besuctl/tree/master)
 [![License](https://img.shields.io/npm/l/besuctl.svg)](https://github.com/freight-trust/besuctl/blob/master/package.json)
 
-<!-- toc -->
-* [Usage](#usage)
-* [Commands](#commands)
-<!-- tocstop -->
-== Usage
-<!-- usage -->
+
+* [Usage](##usage)
+* [Commands](##commands)
+
+## Usage
+
 ```sh-session
 $ npm install -g besuctl
 $ besuctl COMMAND
@@ -25,13 +23,13 @@ USAGE
   $ besuctl COMMAND
 ...
 ```
-<!-- usagestop -->
-== Commands
-<!-- commands -->
+
+# Commands
+
 * [`besuctl hello [FILE]`](#besuctl-hello-file)
 * [`besuctl help [COMMAND]`](#besuctl-help-command)
 
-=== `besuctl eth chainid`
+### `besuctl eth chainid`
 
 This returns the `chainid` from the RPC endpoint you are connected to or localhost, as defined in the `.env` file
 
@@ -62,7 +60,7 @@ EXAMPLE
 ```
 _See code: [src/commands/hello.ts](https://github.com/freight-trust/besuctl/blob/v0.0.2/src/commands/hello.ts)_
 
-=== `besuctl help [COMMAND]`
+## `besuctl help [COMMAND]`
 
 display help for besuctl
 
