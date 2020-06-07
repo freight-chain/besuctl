@@ -4,9 +4,9 @@ besuctl
 Hyperledger Besu Command Line Utility 
 
 [![Version](https://img.shields.io/npm/v/besuctl.svg)](https://npmjs.org/package/besuctl)
-[![License](https://img.shields.io/npm/l/besuctl.svg)](https://github.com/freight-trust/besuctl/blob/master/package.json)
-[freight-chain](https://github.com/freight-chain)
-[freight-trust](https://freighttrust.com)
+[![License](https://img.shields.io/npm/l/besuctl.svg)](https://github.com/freight-trust/besuctl/blob/master/package.json)  
+[Community](https://github.com/freight-chain)  
+[Corporate](https://freighttrust.com)  
 
 # Overview
 

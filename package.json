@@ -3,6 +3,7 @@
   "description": "Hyperledger Besu Command Line Utility",
   "version": "0.0.2",
   "author": "sam@freighttrust.com",
+  "license": "Apache-2.0",
   "bin": {
     "besuctl": "./bin/run"
   },
