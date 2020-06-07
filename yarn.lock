@@ -678,7 +678,7 @@ auth0-source-control-extension-tools@^4.0.7:
     rimraf "^2.5.4"
     winston "^2.2.0"
 
-auth0@^2.23.0:
+auth0@^2.23.0, auth0@^2.26.0:
   version "2.26.0"
   resolved "https://registry.yarnpkg.com/auth0/-/auth0-2.26.0.tgz#90b5dc5e757e1895d8fcdcd441f43af36ee752c4"
   integrity sha512-uMI3jXRjIIxvrVex00WqcJFeX8QZBnuQBoZ5lSxyWiPsIU1mfaM/GBrCtkJBTOnCpL61AWeD7Q/xag7opK2vPA==
