@@ -1,12 +1,20 @@
 besuctl
 =======
 
-Hyperledger Besu Command Line Utility
+Hyperledger Besu Command Line Utility 
 
 [![Version](https://img.shields.io/npm/v/besuctl.svg)](https://npmjs.org/package/besuctl)
 [![License](https://img.shields.io/npm/l/besuctl.svg)](https://github.com/freight-trust/besuctl/blob/master/package.json)
+[freight-chain](https://github.com/freight-chain)
+[freight-trust](https://freighttrust.com)
 
+# Overview
 
+This command line utility is intended to enable users to administer, access, and deploy nodes or sidechains to a hyperledger besu network, while using a centeralized LDAP/OAuth2 provider. This example uses `auth0`, but can be generalized for other 3rd Party Providers. Connecting via `LDAP` is supported, see [roadmap](#roadmap)
+
+- Considerations 
+* [Web3 typescript](https://github.com/xf00f/web3x)
+* [Roadmap for features](https://documenter.getpostman.com/view/9323065/SztJziuL?version=latest)
 * [Usage](##usage)
 * [Commands](##commands)
 
@@ -26,8 +34,11 @@ USAGE
 
 # Commands
 
-* [`besuctl hello [FILE]`](#besuctl-hello-file)
+## besuctl overview
 * [`besuctl help [COMMAND]`](#besuctl-help-command)
+
+## besuctl example command
+* [`besuctl eth chainid`](#besuctl-eth-chainid)
 
 ### `besuctl eth chainid`
 
@@ -58,7 +69,7 @@ EXAMPLE
 }
 
 ```
-_See code: [src/commands/hello.ts](https://github.com/freight-trust/besuctl/blob/v0.0.2/src/commands/hello.ts)_
+
 
 ## `besuctl help [COMMAND]`
 
@@ -70,7 +81,7 @@ USAGE
 
 ARGUMENTS
   COMMAND  command to show help for
-
+  LIST     list all the available commands
 OPTIONS
   --all  see all commands in CLI
 ```
