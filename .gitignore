@@ -1,11 +1,11 @@
 *-debug.log
 *-error.log
+.env
 /.nyc_output
 /dist
 /lib
 /package-lock.json
 /tmp
-node_modules
 DS_store
-.env
 config.json
+node_modules
