@@ -1,5 +1,4 @@
-besuctl
-=======
+# besuctl
 
 hyperledger besu node manager
 
@@ -9,11 +8,15 @@ hyperledger besu node manager
 [![License](https://img.shields.io/npm/l/besuctl.svg)](https://github.com/freight-trust/besuctl/blob/master/package.json)
 
 <!-- toc -->
-* [Usage](#usage)
-* [Commands](#commands)
+
+- [Usage](#usage)
+- [Commands](#commands)
 <!-- tocstop -->
+
 # Usage
+
 <!-- usage -->
+
 ```sh-session
 $ npm install -g besuctl
 $ besuctl COMMAND
@@ -25,11 +28,15 @@ USAGE
   $ besuctl COMMAND
 ...
 ```
+
 <!-- usagestop -->
+
 # Commands
+
 <!-- commands -->
-* [`besuctl hello [FILE]`](#besuctl-hello-file)
-* [`besuctl help [COMMAND]`](#besuctl-help-command)
+
+- [`besuctl hello [FILE]`](#besuctl-hello-file)
+- [`besuctl help [COMMAND]`](#besuctl-help-command)
 
 ## `besuctl hello [FILE]`
 
@@ -49,7 +56,8 @@ EXAMPLE
   hello world from ./src/hello.ts!
 ```
 
-_See code: [src/commands/hello.ts](https://github.com/freight-trust/besuctl/blob/v0.0.5/src/commands/hello.ts)_
+_See code:
+[src/commands/hello.ts](https://github.com/freight-trust/besuctl/blob/v0.0.5/src/commands/hello.ts)_
 
 ## `besuctl help [COMMAND]`
 
@@ -66,5 +74,7 @@ OPTIONS
   --all  see all commands in CLI
 ```
 
-_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v3.1.0/src/commands/help.ts)_
+_See code:
+[@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v3.1.0/src/commands/help.ts)_
+
 <!-- commandsstop -->
