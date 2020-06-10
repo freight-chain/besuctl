@@ -1,1 +1,2 @@
-export {run} from '@oclif/command'
+// eslint-disable-next-line
+export { run } from '@oclif/command'
