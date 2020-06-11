@@ -14,7 +14,9 @@
     "postpack": "rm -f .oclif.manifest.json",
     "prepack": "rm -rf lib && tsc && oclif-dev manifest",
     "pack": "oclif-dev pack",
-    "prepare": "tsc -p ."
+    "prepare": "tsc -p .",
+    "setup": "npm install",
+    "build": "tsc"
   },
   "engines": {
     "node": ">=10.0.0"
