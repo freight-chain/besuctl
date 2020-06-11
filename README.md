@@ -1,6 +1,6 @@
 # besuctl
 
-hyperledger besu node manager
+Hyperledger besu node manager
 
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
 [![Version](https://img.shields.io/npm/v/besuctl.svg)](https://npmjs.org/package/besuctl)
@@ -42,24 +42,18 @@ USAGE
 
 describe the command here
 
-```
-USAGE
-  $ besuctl hello [FILE]
 
-OPTIONS
+- USAGE
+```bash
+  $ besuctl [COMMAND] [FILE]
+```
+
+- OPTIONS
   -f, --force
   -h, --help       show CLI help
   -n, --name=name  name to print
 
-EXAMPLE
-  $ besuctl hello
-  hello world from ./src/hello.ts!
-```
-
-_See code:
-[src/commands/hello.ts](https://github.com/freight-trust/besuctl/blob/v0.0.5/src/commands/hello.ts)_
-
-## `besuctl help [COMMAND]`
+## `besuctl help [COMMAND]
 
 display help for besuctl
 
@@ -78,3 +72,15 @@ _See code:
 [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v3.1.0/src/commands/help.ts)_
 
 <!-- commandsstop -->
+
+## Roadmap
+- add additional commands for interfacing with Besu nodes 
+- add additional testing
+- add interface for webhook
+- add ability for OAuth / Auth0
+- add basic wallet functionality / provider engine
+- security audit 
+
+## License
+
+MIT / Apache-2.0

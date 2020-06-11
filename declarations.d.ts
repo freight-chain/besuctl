@@ -1,9 +1,9 @@
 declare module 'randomatic'
 
-interface Password {
+interface Key {
   id: string
   email: string
-  password: string
+  key: string
   alias: string
   login: string
   used: number
@@ -17,7 +17,7 @@ interface PromptAnswer {
 
 interface Input {
   email: string
-  password: string
+  key: string
   alias: string
   login: string
 }
