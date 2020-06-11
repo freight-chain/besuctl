@@ -1,7 +1,7 @@
 {
   "name": "@freight-trust/besuctl",
   "description": "hyperledger besu command line node manager",
-  "version": "0.0.5",
+  "version": "0.0.7",
   "author": "freight-trust-corp",
   "license": "MIT",
   "repository": "freight-trust/besuctl",
@@ -14,9 +14,7 @@
     "postpack": "rm -f .oclif.manifest.json",
     "prepack": "rm -rf lib && tsc && oclif-dev manifest",
     "pack": "oclif-dev pack",
-    "prepare": "tsc -p .",
-    "test": "nyc --extension .ts mocha --forbid-only \"test/**/*.test.ts\"",
-    "version": "oclif-dev readme && git add README.md"
+    "prepare": "tsc -p ."
   },
   "engines": {
     "node": ">=10.0.0"
@@ -86,9 +84,11 @@
     "eslint-config-airbnb-typescript": "^6.3.1",
     "eslint-config-oclif-typescript": "^0.1.0",
     "eslint-plugin-import": "^2.20.0",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-oclif": "^0.1.0",
+    "eslint-plugin-react": "^7.20.0",
+    "eslint-plugin-react-hooks": "^2.5.1",
     "globby": "^8.0.2",
-    "mocha": "^5.2.0",
     "nyc": "^14.0.0",
     "ts-node": "^8.1.0",
     "tslint": "^5.10.0",
