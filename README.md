@@ -42,16 +42,13 @@ USAGE
 
 describe the command here
 
-
 - USAGE
+
 ```bash
   $ besuctl [COMMAND] [FILE]
 ```
 
-- OPTIONS
-  -f, --force
-  -h, --help       show CLI help
-  -n, --name=name  name to print
+- OPTIONS -f, --force -h, --help show CLI help -n, --name=name name to print
 
 ## `besuctl help [COMMAND]
 
@@ -74,12 +71,13 @@ _See code:
 <!-- commandsstop -->
 
 ## Roadmap
-- add additional commands for interfacing with Besu nodes 
+
+- add additional commands for interfacing with Besu nodes
 - add additional testing
 - add interface for webhook
 - add ability for OAuth / Auth0
 - add basic wallet functionality / provider engine
-- security audit 
+- security audit
 
 ## License
 
