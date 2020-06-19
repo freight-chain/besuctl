@@ -9,3 +9,5 @@
 DS_store
 config.json
 node_modules
+yarn.lock
+ChainSafe eth-local master cli.zip
