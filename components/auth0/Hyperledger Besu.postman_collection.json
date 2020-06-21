@@ -24,15 +24,8 @@
         "url": {
           "raw": "https://<TENANT NAME>.auth0.com/oauth/token",
           "protocol": "https",
-          "host": [
-            "<TENANT NAME>",
-            "auth0",
-            "com"
-          ],
-          "path": [
-            "oauth",
-            "token"
-          ]
+          "host": ["<TENANT NAME>", "auth0", "com"],
+          "path": ["oauth", "token"]
         }
       },
       "response": []
@@ -65,13 +58,9 @@
         "url": {
           "raw": "http://localhost:8545/",
           "protocol": "http",
-          "host": [
-            "localhost"
-          ],
+          "host": ["localhost"],
           "port": "8545",
-          "path": [
-            ""
-          ]
+          "path": [""]
         }
       },
       "response": []
