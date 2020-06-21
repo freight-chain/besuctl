@@ -9,3 +9,6 @@
 DS_store
 config.json
 node_modules
+
+# Local Netlify folder
+.netlify
