@@ -1,4 +1,4 @@
-import {createInterface as _createInterface} from "readline";
+import { createInterface as _createInterface } from "readline";
 
 import {
   showBesuInfo,
@@ -31,43 +31,44 @@ const connectToNode = async (restPort) => {
     console.log("Please input a command:");
     createInterface(nodeAddress);
   } else {
-    console.log(`Could not connect to ${
-        nodeAddress}. Network Connectivity Issue Ref #401`);
+    console.log(
+      `Could not connect to ${nodeAddress}. Network Connectivity Issue Ref #401`
+    );
   }
 };
 
 const commands = [
-  {command : "help", action : showCommandsHelp},
-  {command : "exit", action : ({rl}) => rl.emit("SIGINT")},
+  { command: "help", action: showCommandsHelp },
+  { command: "exit", action: ({ rl }) => rl.emit("SIGINT") },
   {
-    command : "besu-info",
-    action : ({nodeAddress}) => showBesuInfo(nodeAddress),
+    command: "besu-info",
+    action: ({ nodeAddress }) => showBesuInfo(nodeAddress),
   },
   {
-    command : "node-info",
-    action : ({nodeAddress}) => showNodeInfo(nodeAddress),
+    command: "node-info",
+    action: ({ nodeAddress }) => showNodeInfo(nodeAddress),
   },
-  {command : "tx", action : ({nodeAddress}) => showTxInfo(nodeAddress)},
+  { command: "tx", action: ({ nodeAddress }) => showTxInfo(nodeAddress) },
   {
-    command : "stake-state",
-    action : ({nodeAddress}) => showStakeState(nodeAddress),
-  },
-  {
-    command : "pool-status",
-    action : ({nodeAddress}) => showPoolStatus(nodeAddress),
+    command: "stake-state",
+    action: ({ nodeAddress }) => showStakeState(nodeAddress),
   },
   {
-    command : "fragment-logs(.*)?",
-    action : ({nodeAddress, query}) => showFragmentLogs(nodeAddress, query),
+    command: "pool-status",
+    action: ({ nodeAddress }) => showPoolStatus(nodeAddress),
+  },
+  {
+    command: "fragment-logs(.*)?",
+    action: ({ nodeAddress, query }) => showFragmentLogs(nodeAddress, query),
   },
 ];
 
 const createInterface = (nodeAddress) => {
   const rl = _createInterface({
-    input : process.stdin,
-    output : process.stdout,
-    prompt : "besuctl > ",
-    completer : (line) => {
+    input: process.stdin,
+    output: process.stdout,
+    prompt: "besuctl > ",
+    completer: (line) => {
       const completions = [
         "help",
         "besu-info",
@@ -80,7 +81,7 @@ const createInterface = (nodeAddress) => {
       ];
       const hits = completions.filter((c) => c.startsWith(line));
       // Show all completions if none found
-      return [ hits.length ? hits : completions, line ];
+      return [hits.length ? hits : completions, line];
     },
   });
   rl.prompt();
@@ -90,12 +91,13 @@ const createInterface = (nodeAddress) => {
       const query = new RegExp(found.command).exec(cmd)[1];
       await found.action({
         nodeAddress,
-        query : query ? query.trim() : query,
+        query: query ? query.trim() : query,
         rl,
       });
     } else {
-      console.log(`${
-          cmd} is not a valid command. Write 'help' to list all available commands`);
+      console.log(
+        `${cmd} is not a valid command. Write 'help' to list all available commands`
+      );
     }
     rl.prompt();
   });
@@ -113,7 +115,7 @@ const createInterface = (nodeAddress) => {
 };
 
 const agreeTOS = () => {
-  const rl = _createInterface({input : process.stdin, output : process.stdout});
+  const rl = _createInterface({ input: process.stdin, output: process.stdout });
   const question = () => {
     rl.question("DO YOU ACCEPT THE TERMS? (Y/N): ", async (answer) => {
       if (answer.toLowerCase() === "n" || answer.toLowerCase() === "no") {
@@ -131,4 +133,4 @@ const agreeTOS = () => {
   rl.on("SIGINT", () => process.exit(1));
 };
 
-export default {checkConnection, connectToNode, createInterface, agreeTOS};
+export default { checkConnection, connectToNode, createInterface, agreeTOS };
