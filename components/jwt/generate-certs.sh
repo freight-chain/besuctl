@@ -51,7 +51,7 @@ echo "Creating server certificate..."
 CN="000_DEV_SERVER"
 openssl genpkey -algorithm RSA -pkeyopt rsa_keygen_bits:"$KEY_BITS" -out "$SERVER_KEY"
 openssl req -new -key "$SERVER_KEY" -subj "/CN=$CN/O=$ORG" -out "$SERVER_CSR"
-openssl x509 -days "$VALID_DAYS" -req -in "$SERVER_CSR" -CAcreateserial -CA "$CA_CRT" -CAkey "$CA_KEY" -out "$SERVER_CRT"  -extfile "$V3_EXT"
+openssl x509 -days "$VALID_DAYS" -req -in "$SERVER_CSR" -CAcreateserial -CA "$CA_CRT" -CAkey "$CA_KEY" -out "$SERVER_CRT" -extfile "$V3_EXT"
 echo "Done."
 
 ##################################
@@ -62,7 +62,7 @@ echo "Creating localhost certificate..."
 CN="localhost"
 openssl genpkey -algorithm RSA -pkeyopt rsa_keygen_bits:"$KEY_BITS" -out "$LOCALHOST_KEY"
 openssl req -new -key "$LOCALHOST_KEY" -subj "/CN=$CN/O=$ORG" -out "$LOCALHOST_CSR"
-openssl x509 -days "$VALID_DAYS" -req -in "$LOCALHOST_CSR" -CAcreateserial -CA "$CA_CRT" -CAkey "$CA_KEY" -out "$LOCALHOST_CRT"  -extfile "$V3_EXT"
+openssl x509 -days "$VALID_DAYS" -req -in "$LOCALHOST_CSR" -CAcreateserial -CA "$CA_CRT" -CAkey "$CA_KEY" -out "$LOCALHOST_CRT" -extfile "$V3_EXT"
 echo "Done."
 
 ##################################
