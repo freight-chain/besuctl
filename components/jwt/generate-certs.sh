@@ -39,8 +39,8 @@ VALID_DAYS=360
 echo
 echo "Create CA certificate..."
 CN="DEV CA"
-openssl genpkey -algorithm RSA -pkeyopt rsa_keygen_bits:$KEY_BITS -out $CA_KEY
-openssl req -new -x509 -days $VALID_DAYS -key $CA_KEY -subj "/CN=$CN/O=$ORG" -out $CA_CRT
+openssl genpkey -algorithm RSA -pkeyopt rsa_keygen_bits:"$KEY_BITS" -out "$CA_KEY"
+openssl req -new -x509 -days "$VALID_DAYS" -key "$CA_KEY" -subj "/CN=$CN/O=$ORG" -out "$CA_CRT"
 echo "Done."
 
 ##################################
@@ -49,9 +49,9 @@ echo "Done."
 echo
 echo "Creating server certificate..."
 CN="000_DEV_SERVER"
-openssl genpkey -algorithm RSA -pkeyopt rsa_keygen_bits:$KEY_BITS -out $SERVER_KEY
-openssl req -new -key $SERVER_KEY -subj "/CN=$CN/O=$ORG" -out $SERVER_CSR
-openssl x509 -days $VALID_DAYS -req -in $SERVER_CSR -CAcreateserial -CA $CA_CRT -CAkey $CA_KEY -out $SERVER_CRT  -extfile $V3_EXT
+openssl genpkey -algorithm RSA -pkeyopt rsa_keygen_bits:"$KEY_BITS" -out "$SERVER_KEY"
+openssl req -new -key "$SERVER_KEY" -subj "/CN=$CN/O=$ORG" -out "$SERVER_CSR"
+openssl x509 -days "$VALID_DAYS" -req -in "$SERVER_CSR" -CAcreateserial -CA "$CA_CRT" -CAkey "$CA_KEY" -out "$SERVER_CRT"  -extfile "$V3_EXT"
 echo "Done."
 
 ##################################
@@ -60,9 +60,9 @@ echo "Done."
 echo
 echo "Creating localhost certificate..."
 CN="localhost"
-openssl genpkey -algorithm RSA -pkeyopt rsa_keygen_bits:$KEY_BITS -out $LOCALHOST_KEY
-openssl req -new -key $LOCALHOST_KEY -subj "/CN=$CN/O=$ORG" -out $LOCALHOST_CSR
-openssl x509 -days $VALID_DAYS -req -in $LOCALHOST_CSR -CAcreateserial -CA $CA_CRT -CAkey $CA_KEY -out $LOCALHOST_CRT  -extfile $V3_EXT
+openssl genpkey -algorithm RSA -pkeyopt rsa_keygen_bits:"$KEY_BITS" -out "$LOCALHOST_KEY"
+openssl req -new -key "$LOCALHOST_KEY" -subj "/CN=$CN/O=$ORG" -out "$LOCALHOST_CSR"
+openssl x509 -days "$VALID_DAYS" -req -in "$LOCALHOST_CSR" -CAcreateserial -CA "$CA_CRT" -CAkey "$CA_KEY" -out "$LOCALHOST_CRT"  -extfile "$V3_EXT"
 echo "Done."
 
 ##################################
@@ -74,10 +74,10 @@ echo "Creating user certificate..."
 CN="000_DEV_USER"
 USER_ID="testuser1"
 P12_PASSWORD=
-openssl genpkey -algorithm RSA -pkeyopt rsa_keygen_bits:$KEY_BITS -out $USER_KEY
-openssl req -new -key $USER_KEY -subj "/CN=$CN/O=$ORG/UID=$USER_ID" -out $USER_CSR
-openssl x509 -days $VALID_DAYS -req -in $USER_CSR -CAcreateserial -CA $CA_CRT -CAkey $CA_KEY -out $USER_CRT -extfile $V3_EXT
-openssl pkcs12 -in $USER_CRT -inkey $USER_KEY -export -password pass:$P12_PASSWORD -out $USER_P12
+openssl genpkey -algorithm RSA -pkeyopt rsa_keygen_bits:"$KEY_BITS" -out "$USER_KEY"
+openssl req -new -key "$USER_KEY" -subj "/CN=$CN/O=$ORG/UID=$USER_ID" -out "$USER_CSR"
+openssl x509 -days "$VALID_DAYS" -req -in "$USER_CSR" -CAcreateserial -CA "$CA_CRT" -CAkey "$CA_KEY" -out "$USER_CRT" -extfile "$V3_EXT"
+openssl pkcs12 -in "$USER_CRT" -inkey "$USER_KEY" -export -password pass:"$P12_PASSWORD" -out "$USER_P12"
 echo "Done."
 
 ##################################
@@ -86,7 +86,7 @@ echo "Done."
 
 echo
 echo "Creating Diffie-Hellman strong key..."
-openssl dhparam -out $DH_STRONG 2048
+openssl dhparam -out "$DH_STRONG" 2048
 echo "Done."
 
 echo

@@ -25,7 +25,7 @@ openssl ca -in tempreq.pem -out server_crt.pem -config caconfig.cnf
 
 echo
 echo "Creating Diffie-Hellman strong key"
-openssl dhparam -out $DH_STRONG 2048
+openssl dhparam -out "$DH_STRONG" 2048
 echo "Done."
 
 echo
