@@ -1,7 +1,13 @@
+<<<<<<< Updated upstream
 besuctl
 =======
 
 hyperledger besu node manager
+=======
+# freightctl & besuctl
+
+Freight Trust Staking Pool Command Line Tool & Besu node manager
+>>>>>>> Stashed changes
 
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
 [![Version](https://img.shields.io/npm/v/besuctl.svg)](https://npmjs.org/package/besuctl)

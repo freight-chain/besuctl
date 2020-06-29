@@ -1,8 +1,7 @@
 {
-<<<<<<< Updated upstream
   "name": "@freight-trust/besuctl",
   "description": "hyperledger besu command line node manager",
-  "version": "0.0.5",
+  "version": "0.0.7",
   "author": "freight-trust-corp",
   "license": "MIT",
   "repository": "freight-trust/besuctl",
@@ -15,43 +14,26 @@
     "postpack": "rm -f .oclif.manifest.json",
     "prepack": "rm -rf lib && tsc && oclif-dev manifest",
     "pack": "oclif-dev pack",
-    "prepare": "tsc -p .",
-    "test": "nyc --extension .ts mocha --forbid-only \"test/**/*.test.ts\"",
-    "version": "oclif-dev readme && git add README.md"
-=======
-  "name": "freightctl",
-  "version": "1.0.0",
-  "description": "freight trust command line interface",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-        "generate:stubs": "pbjs -t static-module -o index.js proto/**/*.proto && pbts -o index.d.ts index.js",
-    "lint": "tslint -p . -c tslint.json",
-    "lint:fix": "npm run lint -- --fix",
-    "test": "jest --config jestconfig.json",
-    "test:coverage": "npm run test -- --coverage",
-    "test:watch": "npm run test -- --watch",
-        "generate-account": "ts-node generate-account",
-    "register-staking": "ts-node register-contract",
-    "send-onetimekey-tx": "ts-node send-onetimekey-tx",
-    "send-private-tx": "ts-node send-private-tx",
-    "send-raw-tx": "ts-node send-raw-tx",
-    "send-tx": "ts-node send-tx",
->>>>>>> Stashed changes
+    "setup": "npm install",
+    "build": "tsc --esModuleInterop"
   },
-  "author": "",
-  "license": "Apache-2.0",
-    "lint-staged": {
-    "*.{json,md}": [
-      "prettier --write",
-      "git add"
-    ],
-    "*.{ts,tsx}": [
-      "prettier --write",
-      "tslint",
-      "git add"
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "files": [
+    "/bin",
+    "/lib",
+    "/npm-shrinkwrap.json",
+    "/.oclif.manifest.json"
+  ],
+  "oclif": {
+    "commands": "./lib/commands",
+    "bin": "besuctl",
+    "plugins": [
+      "@oclif/plugin-update",
+      "@oclif/plugin-help",
+      "@oclif/plugin-warn-if-update-available"
     ]
-<<<<<<< Updated upstream
   },
   "bin": {
     "besuctl": "./bin/run"
@@ -81,10 +63,8 @@
     "inquirer": "^6.3.1",
     "keytar": "^4.11.0",
     "lowdb": "^1.0.0",
-    "marked-terminal": "^4.1.0",
     "moment": "^2.24.0",
     "qrcode": "^1.4.4",
-    "randomatic": "^3.1.1",
     "tslib": "^1.9.3",
     "usb": "^1.6.0"
   },
@@ -104,30 +84,15 @@
     "eslint-config-airbnb-typescript": "^6.3.1",
     "eslint-config-oclif-typescript": "^0.1.0",
     "eslint-plugin-import": "^2.20.0",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-oclif": "^0.1.0",
+    "eslint-plugin-react": "^7.20.0",
+    "eslint-plugin-react-hooks": "^2.5.1",
     "globby": "^8.0.2",
-    "mocha": "^5.2.0",
     "nyc": "^14.0.0",
+    "randomatic": "^3.1.1",
     "ts-node": "^8.1.0",
     "tslint": "^5.10.0",
     "typescript": "^3.7.5"
-=======
-  "devDependencies": {
-    "@types/bn.js": "~4.11.6",
-    "@types/jest": "~24.0.25",
-    "@types/uuid": "~3.4.6",
-    "husky": "~4.0.1",
-    "jest": "~24.9.0",
-    "jest-create-mock-instance": "~1.1.0",
-    "lint-staged": "~9.5.0",
-    "prettier": "~1.19.1",
-    "rimraf": "~3.0.0",
-    "ts-jest": "~24.3.0",
-    "ts-node": "~8.6.2",
-    "tslint": "~5.20.1",
-    "tslint-config-prettier": "~1.18.0",
-    "typedoc": "~0.16.9",
-    "typescript": "~3.7.4"
->>>>>>> Stashed changes
   }
 }
