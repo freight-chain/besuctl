@@ -1,13 +1,8 @@
-<<<<<<< Updated upstream
-besuctl
-=======
-
-hyperledger besu node manager
-=======
 # freightctl & besuctl
 
 Freight Trust Staking Pool Command Line Tool & Besu node manager
->>>>>>> Stashed changes
+
+
 
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
 [![Version](https://img.shields.io/npm/v/besuctl.svg)](https://npmjs.org/package/besuctl)
@@ -15,11 +10,15 @@ Freight Trust Staking Pool Command Line Tool & Besu node manager
 [![License](https://img.shields.io/npm/l/besuctl.svg)](https://github.com/freight-trust/besuctl/blob/master/package.json)
 
 <!-- toc -->
-* [Usage](#usage)
-* [Commands](#commands)
+
+- [Usage](#usage)
+- [Commands](#commands)
 <!-- tocstop -->
+
 # Usage
+
 <!-- usage -->
+
 ```sh-session
 $ npm install -g besuctl
 $ besuctl COMMAND
@@ -31,33 +30,29 @@ USAGE
   $ besuctl COMMAND
 ...
 ```
+
 <!-- usagestop -->
+
 # Commands
+
 <!-- commands -->
-* [`besuctl hello [FILE]`](#besuctl-hello-file)
-* [`besuctl help [COMMAND]`](#besuctl-help-command)
+
+- [`besuctl hello [FILE]`](#besuctl-hello-file)
+- [`besuctl help [COMMAND]`](#besuctl-help-command)
 
 ## `besuctl hello [FILE]`
 
 describe the command here
 
-```
-USAGE
-  $ besuctl hello [FILE]
+- USAGE
 
-OPTIONS
-  -f, --force
-  -h, --help       show CLI help
-  -n, --name=name  name to print
-
-EXAMPLE
-  $ besuctl hello
-  hello world from ./src/hello.ts!
+```bash
+  $ besuctl [COMMAND] [FILE]
 ```
 
-_See code: [src/commands/hello.ts](https://github.com/freight-trust/besuctl/blob/v0.0.5/src/commands/hello.ts)_
+- OPTIONS -f, --force -h, --help show CLI help -n, --name=name name to print
 
-## `besuctl help [COMMAND]`
+## `besuctl help [COMMAND]
 
 display help for besuctl
 
@@ -72,5 +67,20 @@ OPTIONS
   --all  see all commands in CLI
 ```
 
-_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v3.1.0/src/commands/help.ts)_
+_See code:
+[@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v3.1.0/src/commands/help.ts)_
+
 <!-- commandsstop -->
+
+## Roadmap
+
+- add additional commands for interfacing with Besu nodes
+- add additional testing
+- add interface for webhook
+- add ability for OAuth / Auth0
+- add basic wallet functionality / provider engine
+- security audit
+
+## License
+
+MIT / Apache-2.0
