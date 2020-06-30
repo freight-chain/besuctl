@@ -1,0 +1,80 @@
+{
+	"info": {
+		"_postman_id": "4571c567-8c56-4fe6-9752-28720d3bea9a",
+		"name": "Hyperledger Besu",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth0 Token",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"grant_type\": \"password\",\n    \"username\": \"<EMAIL>\",\n    \"password\": \"<PASSWORD>\",\n    \"client_id\": \"<CLIENT ID>\",\n    \"audience\": \"https://hyperledger-besu/\"\n}"
+				},
+				"url": {
+					"raw": "https://<TENANT NAME>.auth0.com/oauth/token",
+					"protocol": "https",
+					"host": [
+						"<TENANT NAME>",
+						"auth0",
+						"com"
+					],
+					"path": [
+						"oauth",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Block Number",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer <ACCESS TOKEN>",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"eth_blockNumber\",\n    \"params\": [],\n    \"id\": 1\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8545/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8545",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,78 +1,58 @@
-besuctl
-=======
+# freightctl & besuctl
 
-Hyperledger Besu Command Line Utility 
+Freight Trust Staking Pool Command Line Tool & Besu node manager
 
-[![Version](https://img.shields.io/npm/v/besuctl.svg)](https://npmjs.org/package/besuctl)  
-[![CircleCI](https://circleci.com/gh/freight-trust/besuctl/tree/master.svg?style=shield)](https://circleci.com/gh/freight-trust/besuctl/tree/master)  
-[![License](https://img.shields.io/npm/l/besuctl.svg)](https://github.com/freight-trust/besuctl/blob/master/package.json)  
-[Community](https://github.com/freight-chain)  
-[Corporate](https://freighttrust.com)  
 
-# Overview
 
-This command line utility is intended to enable users to administer, access, and deploy nodes or sidechains to a hyperledger besu network, while using a centeralized LDAP/OAuth2 provider. This example uses `auth0`, but can be generalized for other 3rd Party Providers. Connecting via `LDAP` is supported, see [roadmap](#roadmap)
+[![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
+[![Version](https://img.shields.io/npm/v/besuctl.svg)](https://npmjs.org/package/besuctl)
+[![Downloads/week](https://img.shields.io/npm/dw/besuctl.svg)](https://npmjs.org/package/besuctl)
+[![License](https://img.shields.io/npm/l/besuctl.svg)](https://github.com/freight-trust/besuctl/blob/master/package.json)
 
-- Considerations 
-* [Web3 typescript](https://github.com/xf00f/web3x)
-* [Roadmap for features](https://documenter.getpostman.com/view/9323065/SztJziuL?version=latest)
-* [Usage](##usage)
-* [Commands](##commands)
+<!-- toc -->
 
-## Usage
+- [Usage](#usage)
+- [Commands](#commands)
+<!-- tocstop -->
+
+# Usage
+
+<!-- usage -->
 
 ```sh-session
 $ npm install -g besuctl
 $ besuctl COMMAND
 running command...
 $ besuctl (-v|--version|version)
-besuctl/0.0.2 darwin-x64 node-v12.18.0
+besuctl/0.0.5 darwin-x64 node-v10.21.0
 $ besuctl --help [COMMAND]
 USAGE
   $ besuctl COMMAND
 ...
 ```
 
+<!-- usagestop -->
+
 # Commands
 
-## besuctl overview
-* [`besuctl help [COMMAND]`](#besuctl-help-command)
+<!-- commands -->
 
-## besuctl example command
-* [`besuctl eth chainid`](#besuctl-eth-chainid)
+- [`besuctl hello [FILE]`](#besuctl-hello-file)
+- [`besuctl help [COMMAND]`](#besuctl-help-command)
 
-### `besuctl eth chainid`
+## `besuctl hello [FILE]`
 
-This returns the `chainid` from the RPC endpoint you are connected to or localhost, as defined in the `.env` file
+describe the command here
 
-```
-USAGE
-  $ besuctl eth chainid
+- USAGE
 
-OPTIONS
-  -f, --force
-  -h, --help       show CLI help
-  -n, --name=name  name to print
-
-EXAMPLE
-  $ besuctl eth chainid
-  
-  chainid: 211, 0xd3
+```bash
+  $ besuctl [COMMAND] [FILE]
 ```
 
+- OPTIONS -f, --force -h, --help show CLI help -n, --name=name name to print
 
-```json
-{
-    "jsonrpc": "2.0",
-    "method": "eth_chainId",
-    "params": [],
-    "id": 211
-}
-
-```
-
-
-## `besuctl help [COMMAND]`
+## `besuctl help [COMMAND]
 
 display help for besuctl
 
@@ -82,9 +62,25 @@ USAGE
 
 ARGUMENTS
   COMMAND  command to show help for
-  LIST     list all the available commands
+
 OPTIONS
   --all  see all commands in CLI
 ```
 
+_See code:
+[@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v3.1.0/src/commands/help.ts)_
+
 <!-- commandsstop -->
+
+## Roadmap
+
+- add additional commands for interfacing with Besu nodes
+- add additional testing
+- add interface for webhook
+- add ability for OAuth / Auth0
+- add basic wallet functionality / provider engine
+- security audit
+
+## License
+
+MIT / Apache-2.0
